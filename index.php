@@ -7,7 +7,7 @@
 <h1>AltCoin (ALT) Faucet</h1>
 <hr />
 <?php
-require_once("ayah.php"); //Install areyouahuman.com into this folder.
+require_once("ayah.php"); // Install areyouahuman.com into this folder.
 require_once("jsonRPCClient.php"); //get this here: http://jsonrpcphp.org/
 $alt = new jsonRPCClient('http://username:password@localhost:port/'); //set to altcoind user/pass/port
 $min = 1; //set to minimum payout
