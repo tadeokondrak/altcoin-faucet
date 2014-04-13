@@ -1,6 +1,7 @@
+<?php
 // Made by Tadeo Kondrak (tadeokondrak.com)
 // LICENSE: http://tadeo.mit-license.org/
-
+?>
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"> //bootstrap 3.1.1
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script> //bootstrap 3.1.1
 <style>body{margin: 30px;}</style>
@@ -20,7 +21,7 @@ echo '<div class="alert alert-dismissable alert-success"><button type="button" c
 
 <form role="form" action="index.php" method="POST">
   <div class="form-group">
-    <label for="address">CHG address</label>
+    <label for="address">ALT address</label>
     <input type="address" name="address" class="form-control" id="address" placeholder="MVVXiPfpBhGoLcWstgQWjrzHWSXX3CM7RR">
   </div>
   <?php
