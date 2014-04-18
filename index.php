@@ -14,9 +14,30 @@ $alt = new jsonRPCClient('http://username:password@localhost:port/'); //set to a
 $min = 1; //set to minimum payout
 $max = 5; //set to max payout
 $ayah = new AYAH();
-if (array_key_exists('submit', $_POST)){$score = $ayah->scoreResult();if ($score){$username = $_POST['address'];if(!empty($_POST['address'])) {if($alt->getbalance() < 1){echo '<div class="alert alert-dismissable alert-danger"><button type="button" class="close" data-dismiss="alert">×</button><strong>Error:</strong> <a href="#" class="alert-link"></a>Not enough balance.</div>';}else{$check = $alt->validateaddress($username);if($check["isvalid"] == 1){$amount = rand($min,$max);$alt->sendtoaddress($username, $amount);
-echo '<div class="alert alert-dismissable alert-success"><button type="button" class="close" data-dismiss="alert">×</button><strong></strong> <a href="#" class="alert-link"></a>You got ';echo $amount;echo " ALT!</div>";
-}}}}else{echo '<div class="alert alert-dismissable alert-danger"><button type="button" class="close" data-dismiss="alert">×</button><strong>Error:</strong> <a href="#" class="alert-link"></a>Human Verification Failed.</div>';}}
+	if (array_key_exists('submit', $_POST)){
+		$score = $ayah->scoreResult();
+		if ($score){
+			$username = $_POST['address'];
+			if(!empty($_POST['address'])) {
+				if($alt->getbalance() < 1){
+					echo '<div class="alert alert-dismissable alert-danger"><button type="button" class="close" data-dismiss="alert">×</button><strong>Error:</strong> <a href="#" class="alert-link"></a>Not enough balance.</div>';
+				} else {
+					$check = $alt->validateaddress($username);
+					if($check["isvalid"] == 1){
+						$amount = rand($min,$max);$alt->sendtoaddress($username, $amount);
+						echo '<div class="alert alert-dismissable alert-success"><button type="button" class="close" data-dismiss="alert">×</button><strong></strong> <a href="#" class="alert-link"></a>You got ';
+						echo $amount;
+						echo " ALT!</div>";
+					}
+				}
+			}
+	}
+	else
+	{
+		echo '<div class="alert alert-dismissable alert-danger"><button type="button" class="close" data-dismiss="alert">×</button><strong>Error:</strong> <a href="#" class="alert-link"></a>Human Verification Failed.</div>';
+	}
+	
+}
 ?>
 
 <form role="form" action="index.php" method="POST">
@@ -25,7 +46,7 @@ echo '<div class="alert alert-dismissable alert-success"><button type="button" c
     <input type="address" name="address" class="form-control" id="address" placeholder="MVVXiPfpBhGoLcWstgQWjrzHWSXX3CM7RR">
   </div>
   <?php
-				echo $ayah->getPublisherHTML();
+	echo $ayah->getPublisherHTML();
   ?>
   <button type="submit" class="btn btn-default" name="submit">Submit</button>
 </form>
