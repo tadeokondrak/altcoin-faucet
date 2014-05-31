@@ -11,6 +11,11 @@ Installation
 3. Change all the details in index.php.
 4. Run a webserver in that directory.
 
+
+Donation
+======
+BTC: [coinbase.com/tdeo](https://coinbase.com/tdeo) (BTC address and coinbase donation)
+
 License
 =======
 MIT License at http://tadeo.mit-license.org/
