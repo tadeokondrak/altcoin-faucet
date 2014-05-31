@@ -11,6 +11,10 @@ Installation
 3. Change all the details in index.php.
 4. Run a webserver in that directory.
 
+Errors
+======
+
+- If the wallet is protected with a passphrase, it will not work.
 
 Donation
 ======
